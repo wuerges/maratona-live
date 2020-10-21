@@ -20,6 +20,7 @@ void * constest_update(void *param) {
 		contest->update(scoreboard_filter);
 		usleep(100000);
 	}
+	return NULL;
 }
 
 #define black cv::Vec3b(0,0,0)
@@ -76,11 +77,11 @@ void capture(int index, string camera_adress, bool crop = false) {
 	}
 
 	if(fullhd) {
-		cap.set(CV_CAP_PROP_FRAME_WIDTH,1920);
-		cap.set(CV_CAP_PROP_FRAME_HEIGHT,1080);
+		cap.set(cv::CAP_PROP_FRAME_WIDTH,1920);
+		cap.set(cv::CAP_PROP_FRAME_HEIGHT,1080);
 	} else {
-		cap.set(CV_CAP_PROP_FRAME_WIDTH,1280);
-		cap.set(CV_CAP_PROP_FRAME_HEIGHT,720);
+		cap.set(cv::CAP_PROP_FRAME_WIDTH,1280);
+		cap.set(cv::CAP_PROP_FRAME_HEIGHT,720);
 	}
 
 	cv::Mat image;
@@ -367,7 +368,7 @@ int main(int argc, char **argv) {
 
 	initialize_cameras();
 
-	cv::namedWindow("control", CV_WINDOW_AUTOSIZE);
+	cv::namedWindow("control", cv::WINDOW_AUTOSIZE);
 	cv::setMouseCallback("control", on_mouse, 0);
 
 	contest = new BOCA_Contest(fullhd);

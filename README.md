@@ -64,3 +64,8 @@ $ ./stats
 ```
 
 When you use this functionality for your own contest, make sure you update the file *'maratona-live/stats/team_info.txt'* to include the correct information of the participating teams (e.g. BOCA username, team name, contestants, codeforces handles, coach, etc).
+
+
+## Dependencies in archlinux
+
+opencv hdf5 vtk
